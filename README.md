@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DineMarket
 
-## Getting Started
+A full-stack ecommerce storefront for browsing products, managing a cart, and placing orders, with an admin area for product and order workflows.
 
-First, run the development server:
+Built with **Next.js 14, React, TypeScript, Prisma, and MongoDB**. Product and order images are handled through Cloudinary.
+
+## What is in the app
+
+- Product listings, categories, product detail pages, and responsive storefront pages
+- Cart and checkout flows
+- Order submission and order management
+- Admin-facing product and order views
+- Contact and service pages
+
+The checkout records a payment type; it does not claim an integrated card-payment gateway.
+
+## Stack
+
+| Layer | Tools |
+| --- | --- |
+| Web | Next.js 14, React, TypeScript, Tailwind CSS |
+| Data | Prisma, MongoDB |
+| Media | Cloudinary |
+| UI | MUI, Radix components, Framer Motion |
+
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/RHamzaZulfiqarJ/DineMarket.git
+cd DineMarket
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a local `.env` file with your own values:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+DATABASE_URL="mongodb+srv://..."
+CLOUDINARY_CLOUD_NAME=""
+CLOUDINARY_API_KEY=""
+CLOUDINARY_API_SECRET=""
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Then run:
 
-## Learn More
+```bash
+npx prisma generate
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The repository was formerly named `Fullstack-Ecommerce`. Its existing storefront branding is Dine Market, which is why the project and repository now use **DineMarket**.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Do not commit real environment files or credentials. The previously tracked root `.env` was removed from the current branch; if it contained active secrets, rotate them and consider a separate history cleanup.

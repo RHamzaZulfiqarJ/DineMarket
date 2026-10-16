@@ -7,8 +7,8 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "E-Commerce App",
-  description: "Created By Hamza Zulfiqar",
+  title: "DineMarket",
+  description: "Browse products, manage your cart, and shop at DineMarket.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
